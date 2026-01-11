@@ -7,16 +7,36 @@
     <title>Lightspeed Executor</title>
     <meta name="description" content="Premium Roblox Execution & Security" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
-      
-      :root {
-        --cursor-size: 20px;
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                300: '#93c5fd',
+                400: '#60a5fa',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                800: '#1e40af',
+                900: '#1e3a8a',
+                950: '#172554',
+              }
+            }
+          }
+        }
       }
-
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+      
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #000000;
+        background-color: #050b14; /* Deep Navy Black */
         color: #ffffff;
         overflow-x: hidden;
       }
@@ -25,59 +45,23 @@
         font-family: 'JetBrains Mono', monospace;
       }
 
-      /* Starry Background */
-      .bg-stars {
-        background-image: 
-          radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
-          radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
-          radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
-        background-size: 550px 550px, 350px 350px, 250px 250px;
-        background-position: 0 0, 40px 60px, 130px 270px;
-        animation: star-move 200s linear infinite;
+      /* Subtle Background Glow */
+      .bg-glow {
+        background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, rgba(5, 11, 20, 0) 70%);
       }
 
-      @keyframes star-move {
-        from { background-position: 0 0, 40px 60px, 130px 270px; }
-        to { background-position: 550px 550px, 390px 410px, 380px 520px; }
-      }
-
-      /* Noise Texture */
-      .bg-noise {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        pointer-events: none;
-        z-index: 50;
-        opacity: 0.03;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-      }
-
-      /* Custom Scrollbar */
       ::-webkit-scrollbar {
-        width: 6px;
+        width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #050505;
+        background: #020617;
       }
       ::-webkit-scrollbar-thumb {
-        background: #333;
+        background: #1e293b;
+        border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-      }
-
-      /* Utilities */
-      .glass-panel {
-        background: rgba(10, 10, 10, 0.6);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      
-      .text-glow {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        background: #334155;
       }
     </style>
   <script type="importmap">
@@ -92,8 +76,7 @@
 </script>
 </head>
   <body>
-    <div class="bg-noise"></div>
-    <div class="fixed inset-0 bg-stars opacity-40 pointer-events-none z-[-1]"></div>
+    <div class="fixed inset-0 bg-glow pointer-events-none z-[-1]"></div>
     <div id="root"></div>
   </body>
 </html>

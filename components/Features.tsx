@@ -37,37 +37,32 @@ const features: Feature[] = [
 
 const Features: React.FC = () => {
   return (
-    <div id="features" className="py-32 bg-black relative border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white uppercase mb-4">
-              System <span className="text-gray-600">Capabilities</span>
-            </h2>
-            <p className="text-gray-400 max-w-md">
-              Engineered for dominance. Built for speed.
-            </p>
-          </div>
-          <div className="hidden md:block w-32 h-[1px] bg-white/20 mb-4"></div>
+    <div id="features" className="py-24 bg-[#050b14] relative">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Powerful <span className="text-brand-500">Features</span>
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            Everything you need to dominate the platform, built into one lightweight application.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="relative p-8 bg-black hover:bg-zinc-950 transition-colors duration-300 group"
+              className="p-8 bg-[#0f172a] rounded-xl border border-white/5 hover:border-brand-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-brand-900/10 group"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              
-              <div className="w-12 h-12 border border-white/10 bg-white/5 flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-black transition-all duration-300 rounded-sm">
-                <feature.icon className="h-5 w-5" />
+              <div className="w-12 h-12 bg-brand-900/20 rounded-lg flex items-center justify-center mb-6 text-brand-400 group-hover:text-brand-300 group-hover:bg-brand-600/20 transition-colors">
+                <feature.icon className="h-6 w-6" />
               </div>
               
-              <h3 className="text-lg font-bold text-white mb-3 uppercase tracking-wide flex items-center gap-2">
+              <h3 className="text-lg font-bold text-white mb-3">
                 {feature.title}
               </h3>
               
-              <p className="text-gray-500 leading-relaxed text-sm font-medium">
+              <p className="text-slate-400 text-sm leading-relaxed">
                 {feature.description}
               </p>
             </div>
